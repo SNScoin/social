@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monday.com Integration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <h1 class="text-xl font-bold text-gray-900">Monday.com Integration</h1>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="/" class="text-gray-600 hover:text-gray-900">
+                            <i class="fas fa-home"></i> Dashboard
+                        </a>
+                        <button id="logoutBtn" class="text-gray-600 hover:text-gray-900">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="max-w-2xl mx-auto py-10 sm:px-6 lg:px-8">
+            <!-- Monday.com API Token Setup -->
+            <div class="bg-white shadow rounded-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Monday.com API Token</h2>
+                <div class="mb-6">
+                    <label for="apiToken" class="block text-sm font-medium text-gray-700 mb-2">Enter your Monday.com API Token</label>
+                    <input type="text" id="apiToken" class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" placeholder="Enter your Monday.com API token">
+                    <p class="mt-2 text-sm text-gray-500">You can find your API token in your Monday.com account settings under "API & Integrations".</p>
+                </div>
+                <button id="saveApiToken" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Save API Token
+                </button>
+            </div>
+
+            <!-- Integration Details -->
+            <div class="bg-white shadow rounded-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Integration Details</h2>
+                <div class="mb-6">
+                    <p class="text-gray-700 mb-2">Your Monday.com integration is configured with the following details:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Workspace:</strong> {{ workspace_name }} <span class="text-gray-400">(ID: {{ workspace_id }})</span></li>
+                        <li><strong>Board:</strong> {{ board_name }} <span class="text-gray-400">(ID: {{ board_id }})</span></li>
+                        {% if item_id %}
+                        <li><strong>Item:</strong> {{ item_name }} <span class="text-gray-400">(ID: {{ item_id }})</span></li>
+                        {% else %}
+                        <li><strong>Item:</strong> <span class="text-gray-400">(None selected)</span></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <button id="editConfig" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Edit Configuration
+                </button>
+            </div>
+
+            <!-- Subitems Board Information -->
+            <div class="bg-yellow-50 border border-yellow-200 shadow rounded-lg p-8 mb-8">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-info-circle text-yellow-400 text-xl"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-lg font-medium text-yellow-800 mb-2">Important: Subitems Boards</h3>
+                        <div class="text-yellow-700">
+                            <p class="mb-3">If your Monday.com board is a <strong>subitems board</strong> (a board that contains subitems under parent items), you need to create at least one parent item before your social media links can be synced.</p>
+                            
+                            <div class="bg-white border border-yellow-300 rounded-md p-4 mb-3">
+                                <h4 class="font-medium text-yellow-800 mb-2">How to identify a subitems board:</h4>
+                                <ul class="list-disc list-inside text-sm space-y-1">
+                                    <li>The board has a hierarchical structure with parent items and subitems</li>
+                                    <li>Items are nested under other items</li>
+                                    <li>You see expand/collapse arrows next to items</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-white border border-yellow-300 rounded-md p-4">
+                                <h4 class="font-medium text-yellow-800 mb-2">To create a parent item:</h4>
+                                <ol class="list-decimal list-inside text-sm space-y-1">
+                                    <li>Go to your Monday.com board</li>
+                                    <li>Click the "+" button to add a new item</li>
+                                    <li>Give it a name like "Social Media Links" or "Content Management"</li>
+                                    <li>Save the item</li>
+                                    <li>Now you can refresh your social media links and they will be created as subitems under this parent</li>
+                                </ol>
+                            </div>
+
+                            <div class="mt-4 p-3 bg-yellow-100 border border-yellow-300 rounded-md">
+                                <p class="text-sm font-medium text-yellow-800">
+                                    <i class="fas fa-lightbulb mr-1"></i>
+                                    <strong>Tip:</strong> If you get an error "No parent item found in subitems board", follow the steps above to create a parent item first.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Board Type Information (Dynamic) -->
+            <div id="boardTypeInfo" class="bg-white shadow rounded-lg p-6 mb-8" style="display: none;">
+                <!-- Board type info will be populated by JavaScript -->
+            </div>
+
+            <!-- Subitems Instructions (Dynamic) -->
+            <div id="subitemsInfo" class="bg-yellow-50 border border-yellow-200 shadow rounded-lg p-6 mb-8" style="display: none;">
+                <h3 class="text-lg font-medium text-yellow-800 mb-3">Next Steps for Subitems Board</h3>
+                <div class="text-yellow-700">
+                    <p class="mb-3">Since you've selected a subitems board, please follow these steps:</p>
+                    <ol class="list-decimal list-inside text-sm space-y-2">
+                        <li>Go to your Monday.com board</li>
+                        <li>Create a parent item (e.g., "Social Media Links" or "Content Management")</li>
+                        <li>Come back here and complete the column mapping</li>
+                        <li>Your social media links will then be created as subitems under the parent item</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        // Check authentication
+        const token = localStorage.getItem('access_token');
+        if (!token) {
+            window.location.href = '/login';
+        }
+
+        // Function to save Monday.com API token
+        async function saveApiToken() {
+            const apiToken = document.getElementById('apiToken').value.trim();
+            if (!apiToken) {
+                alert('Please enter your Monday.com API token');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/monday/connect', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ api_token: apiToken })
+                });
+
+                if (response.ok) {
+                    localStorage.setItem('monday_api_token', apiToken);
+                    alert('API token saved successfully!');
+                    window.location.reload();
+                } else {
+                    const data = await response.json();
+                    throw new Error(data.detail || 'Failed to save token');
+                }
+            } catch (error) {
+                console.error('Error saving API token:', error);
+                alert(error.message || 'Error saving API token. Please try again.');
+            }
+        }
+
+        // Load existing API token if available
+        const existingApiToken = localStorage.getItem('monday_api_token');
+        if (existingApiToken) {
+            document.getElementById('apiToken').value = existingApiToken;
+        }
+
+        // Event listeners
+        document.getElementById('saveApiToken').addEventListener('click', saveApiToken);
+        document.getElementById('editConfig').addEventListener('click', function() {
+            window.location.href = '/monday/config?edit=1';
+        });
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('access_token');
+            document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            window.location.href = '/login';
+        });
+
+        async function fetchWorkspaces() {
+            const token = localStorage.getItem('access_token');
+            const workspaceSelect = document.getElementById('workspace_id');
+            workspaceSelect.disabled = true;
+            workspaceSelect.innerHTML = '<option value="">Loading workspaces...</option>';
+            
+            try {
+                const response = await fetch('/api/monday/workspaces', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        localStorage.removeItem('access_token');
+                        return;
+                    }
+                    throw new Error(`Failed to fetch workspaces: ${response.status}`);
+                }
+
+                const workspaces = await response.json();
+                workspaceSelect.innerHTML = '<option value="">Select a workspace</option>';
+                workspaces.forEach(workspace => {
+                    const option = document.createElement('option');
+                    option.value = workspace.id;
+                    option.textContent = workspace.name;
+                    workspaceSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error fetching workspaces:', error);
+                workspaceSelect.innerHTML = '<option value="">Error loading workspaces</option>';
+            } finally {
+                workspaceSelect.disabled = false;
+            }
+        }
+
+        async function fetchBoards(workspaceId) {
+            if (!workspaceId) return;
+            
+            const token = localStorage.getItem('access_token');
+            const boardSelect = document.getElementById('board_id');
+            boardSelect.disabled = true;
+            boardSelect.innerHTML = '<option value="">Loading boards...</option>';
+            
+            try {
+                const response = await fetch(`/api/monday/boards?workspace_id=${workspaceId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        localStorage.removeItem('access_token');
+                        return;
+                    }
+                    throw new Error(`Failed to fetch boards: ${response.status}`);
+                }
+
+                const boards = await response.json();
+                boardSelect.innerHTML = '<option value="">Select a board</option>';
+                boards.forEach(board => {
+                    const option = document.createElement('option');
+                    option.value = board.id;
+                    option.textContent = board.name;
+                    option.setAttribute('data-board-kind', board.board_kind || 'public');
+                    boardSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error fetching boards:', error);
+                boardSelect.innerHTML = '<option value="">Error loading boards</option>';
+            } finally {
+                boardSelect.disabled = false;
+            }
+        }
+
+        function updateBoardTypeInfo(boardSelect) {
+            const selectedOption = boardSelect.options[boardSelect.selectedIndex];
+            const boardTypeInfo = document.getElementById('boardTypeInfo');
+            const subitemsInfo = document.getElementById('subitemsInfo');
+            
+            if (!selectedOption || !selectedOption.value) {
+                boardTypeInfo.style.display = 'none';
+                subitemsInfo.style.display = 'none';
+                return;
+            }
+            
+            const boardKind = selectedOption.getAttribute('data-board-kind');
+            const boardName = selectedOption.textContent;
+            
+            boardTypeInfo.style.display = 'block';
+            
+            if (boardKind === 'subitems') {
+                boardTypeInfo.innerHTML = `
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-md p-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-400 mr-2"></i>
+                            <span class="font-medium text-yellow-800">Subitems Board Detected</span>
+                        </div>
+                        <p class="text-yellow-700 text-sm mt-1">"${boardName}" is a subitems board. You need to create a parent item before syncing links.</p>
+                    </div>
+                `;
+                subitemsInfo.style.display = 'block';
+            } else {
+                boardTypeInfo.innerHTML = `
+                    <div class="bg-green-50 border border-green-200 rounded-md p-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span class="font-medium text-green-800">Regular Board</span>
+                        </div>
+                        <p class="text-green-700 text-sm mt-1">"${boardName}" is a regular board. Links will be created as regular items.</p>
+                    </div>
+                `;
+                subitemsInfo.style.display = 'none';
+            }
+        }
+
+        async function fetchItems(boardId) {
+            if (!boardId) return;
+            
+            const token = localStorage.getItem('access_token');
+            const itemSelect = document.getElementById('item_id');
+            itemSelect.disabled = true;
+            itemSelect.innerHTML = '<option value="">Loading items...</option>';
+            
+            try {
+                const response = await fetch(`/api/monday/items?board_id=${boardId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        localStorage.removeItem('access_token');
+                        return;
+                    }
+                    throw new Error(`Failed to fetch items: ${response.status}`);
+                }
+
+                const items = await response.json();
+                itemSelect.innerHTML = '<option value="">Select an item</option>';
+                items.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.id;
+                    option.textContent = item.name;
+                    itemSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error fetching items:', error);
+                itemSelect.innerHTML = '<option value="">Error loading items</option>';
+            } finally {
+                itemSelect.disabled = false;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                await fetchWorkspaces();
+            } catch (error) {
+                console.error('Error during initialization:', error);
+                localStorage.removeItem('access_token');
+            }
+
+            document.getElementById('workspace_id').addEventListener('change', function(e) {
+                fetchBoards(e.target.value);
+            });
+
+            document.getElementById('board_id').addEventListener('change', function(e) {
+                updateBoardTypeInfo(e.target);
+                fetchItems(e.target.value);
+            });
+        });
+    </script>
+</body>
+</html> 

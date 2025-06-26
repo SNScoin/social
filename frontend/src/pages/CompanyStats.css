@@ -1,0 +1,263 @@
+.company-stats-bg {
+  min-height: 100vh;
+  background: #f6f5fa;
+  padding-bottom: 40px;
+}
+
+.company-stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 32px 0 32px;
+}
+
+.logo-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #22223b;
+}
+
+.company-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.company-dropdown {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  background: #fff;
+  margin-right: 8px;
+}
+
+.nav-link {
+  color: #22223b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 8px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #2563eb;
+}
+
+.stats-cards {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+  margin: 32px 32px 0 32px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px 36px;
+  min-width: 180px;
+  flex: 1 1 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stat-label {
+  color: #22223b;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.add-link-card, .all-links-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin: 32px 32px 0 32px;
+  padding: 32px 32px 24px 32px;
+}
+
+.add-link-card h2, .all-links-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #22223b;
+}
+
+.add-link-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.platform-select {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.platform-btn {
+  background: #f9f9fb;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.platform-btn.selected, .platform-btn:hover {
+  border: 2px solid #2563eb;
+  background: #e8f0fe;
+}
+
+.platform-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 6px;
+}
+
+.link-input {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.add-link-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-link-btn:hover {
+  background: #1d4ed8;
+}
+
+.links-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  margin-top: 18px;
+}
+
+.links-table th {
+  text-align: left;
+  color: #888;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+.links-table td {
+  background: #f9f9fb;
+  border-radius: 6px;
+  padding: 12px 10px;
+  font-size: 1rem;
+  color: #22223b;
+  vertical-align: middle;
+}
+
+.links-table td:nth-child(8) {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 0 8px;
+}
+
+.error {
+  color: #e11d48;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.delete-link-btn, .refresh-stats-btn {
+  padding: 7px 16px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.delete-link-btn {
+  background: #fbe9e9;
+  color: #e11d48;
+}
+.delete-link-btn:hover {
+  background: #e11d48;
+  color: #fff;
+}
+
+.refresh-stats-btn {
+  background: #e8f0fe;
+  color: #2563eb;
+}
+.refresh-stats-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+.icon-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+  color: #2563eb;
+}
+.icon-btn.delete {
+  color: #e11d48;
+}
+.icon-btn.delete:hover:not(:disabled) {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.icon-btn:disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+  background: none;
+}
+
+@media (max-width: 900px) {
+  .stats-cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .add-link-card, .all-links-card, .company-stats-header {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+} 
