@@ -1,0 +1,308 @@
+2025-05-07 16:58:30,475 - monday_sync - INFO - Starting Monday.com sync for link ID 12: https://www.tiktok.com/@quran_karim_academy/video/7487533914215468319
+2025-05-07 16:58:30,476 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:30,479 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:30,479 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:30,480 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:30,480 - monday_sync - INFO - Mapped platform tiktok to TikTok
+2025-05-07 16:58:30,481 - monday_sync - INFO - Metrics values: {'views': 3600000, 'likes': 102900, 'comments': 1226}
+2025-05-07 16:58:30,482 - monday_sync - INFO - Updating existing Monday.com item: 1947567672
+2025-05-07 16:58:30,482 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947567672', 'columnValues': '{"numbers__1": "3600000", "numbers_1__1": "102900", "numbers_2__1": "1226"}'}
+2025-05-07 16:58:30,616 - monday_sync - INFO - Starting Monday.com sync for link ID 12: https://www.tiktok.com/@quran_karim_academy/video/7487533914215468319
+2025-05-07 16:58:30,616 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:30,619 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:30,619 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:30,620 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:30,620 - monday_sync - INFO - Mapped platform tiktok to TikTok
+2025-05-07 16:58:30,622 - monday_sync - INFO - Metrics values: {'views': 3600000, 'likes': 102900, 'comments': 1226}
+2025-05-07 16:58:30,622 - monday_sync - INFO - Updating existing Monday.com item: 1947567672
+2025-05-07 16:58:30,622 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947567672', 'columnValues': '{"numbers__1": "3600000", "numbers_1__1": "102900", "numbers_2__1": "1226"}'}
+2025-05-07 16:58:31,685 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:31,685 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947567672"}}}
+2025-05-07 16:58:31,685 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947567672'}}}
+2025-05-07 16:58:31,685 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947567672
+2025-05-07 16:58:32,014 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:32,014 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947567672"}}}
+2025-05-07 16:58:32,014 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947567672'}}}
+2025-05-07 16:58:32,016 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947567672
+2025-05-07 16:58:32,344 - monday_sync - INFO - Starting Monday.com sync for link ID 13: https://www.youtube.com/watch?v=TBS95jkRe9M
+2025-05-07 16:58:32,344 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:32,345 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:32,345 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:32,345 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:32,345 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 16:58:32,347 - monday_sync - INFO - Metrics values: {'views': 384419, 'likes': 5060, 'comments': 98}
+2025-05-07 16:58:32,348 - monday_sync - INFO - Updating existing Monday.com item: 1947567711
+2025-05-07 16:58:32,348 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947567711', 'columnValues': '{"numbers__1": "384419", "numbers_1__1": "5060", "numbers_2__1": "98"}'}
+2025-05-07 16:58:32,535 - monday_sync - INFO - Starting Monday.com sync for link ID 13: https://www.youtube.com/watch?v=TBS95jkRe9M
+2025-05-07 16:58:32,543 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:32,543 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:32,543 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:32,544 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:32,544 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 16:58:32,545 - monday_sync - INFO - Metrics values: {'views': 384419, 'likes': 5060, 'comments': 98}
+2025-05-07 16:58:32,545 - monday_sync - INFO - Updating existing Monday.com item: 1947567711
+2025-05-07 16:58:32,545 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947567711', 'columnValues': '{"numbers__1": "384419", "numbers_1__1": "5060", "numbers_2__1": "98"}'}
+2025-05-07 16:58:33,331 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:33,345 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947567711"}}}
+2025-05-07 16:58:33,346 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947567711'}}}
+2025-05-07 16:58:33,347 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947567711
+2025-05-07 16:58:33,368 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:33,368 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947567711"}}}
+2025-05-07 16:58:33,369 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947567711'}}}
+2025-05-07 16:58:33,370 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947567711
+2025-05-07 16:58:47,381 - monday_sync - INFO - Starting Monday.com sync for link ID 14: https://www.tiktok.com/@liamdeone13/video/7499157369729879312
+2025-05-07 16:58:47,381 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:47,381 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:47,390 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:47,390 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:47,390 - monday_sync - INFO - Mapped platform tiktok to TikTok
+2025-05-07 16:58:47,391 - monday_sync - INFO - Metrics values: {'views': 673500, 'likes': 51400, 'comments': 1557}
+2025-05-07 16:58:47,391 - monday_sync - INFO - Updating existing Monday.com item: 1947569515
+2025-05-07 16:58:47,391 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569515', 'columnValues': '{"numbers__1": "673500", "numbers_1__1": "51400", "numbers_2__1": "1557"}'}
+2025-05-07 16:58:48,243 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:48,243 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569515"}}}
+2025-05-07 16:58:48,243 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569515'}}}
+2025-05-07 16:58:48,243 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569515
+2025-05-07 16:58:48,350 - monday_sync - INFO - Starting Monday.com sync for link ID 15: https://www.youtube.com/watch?v=VtBZEh5CDec
+2025-05-07 16:58:48,350 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:48,357 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:48,357 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:48,357 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:48,357 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 16:58:48,358 - monday_sync - INFO - Metrics values: {'views': 1067788, 'likes': 34184, 'comments': 150}
+2025-05-07 16:58:48,358 - monday_sync - INFO - Updating existing Monday.com item: 1947569595
+2025-05-07 16:58:48,358 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569595', 'columnValues': '{"numbers__1": "1067788", "numbers_1__1": "34184", "numbers_2__1": "150"}'}
+2025-05-07 16:58:49,410 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:49,410 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569595"}}}
+2025-05-07 16:58:49,410 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569595'}}}
+2025-05-07 16:58:49,410 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569595
+2025-05-07 16:58:49,510 - monday_sync - INFO - Starting Monday.com sync for link ID 17: https://www.youtube.com/watch?v=Vo6rVfsEoC4
+2025-05-07 16:58:49,510 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:49,510 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:49,514 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:49,514 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:49,514 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 16:58:49,515 - monday_sync - INFO - Metrics values: {'views': 773210, 'likes': 8240, 'comments': 140}
+2025-05-07 16:58:49,515 - monday_sync - INFO - Updating existing Monday.com item: 1947569717
+2025-05-07 16:58:49,516 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569717', 'columnValues': '{"numbers__1": "773210", "numbers_1__1": "8240", "numbers_2__1": "140"}'}
+2025-05-07 16:58:50,427 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:50,427 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569717"}}}
+2025-05-07 16:58:50,442 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569717'}}}
+2025-05-07 16:58:50,442 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569717
+2025-05-07 16:58:50,483 - monday_sync - INFO - Starting Monday.com sync for link ID 14: https://www.tiktok.com/@liamdeone13/video/7499157369729879312
+2025-05-07 16:58:50,483 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:50,490 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:50,490 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:50,490 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:50,490 - monday_sync - INFO - Mapped platform tiktok to TikTok
+2025-05-07 16:58:50,491 - monday_sync - INFO - Metrics values: {'views': 673500, 'likes': 51400, 'comments': 1578}
+2025-05-07 16:58:50,491 - monday_sync - INFO - Updating existing Monday.com item: 1947569515
+2025-05-07 16:58:50,492 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569515', 'columnValues': '{"numbers__1": "673500", "numbers_1__1": "51400", "numbers_2__1": "1578"}'}
+2025-05-07 16:58:50,553 - monday_sync - INFO - Starting Monday.com sync for link ID 18: https://www.youtube.com/watch?v=B5Wo1zh5VIQ
+2025-05-07 16:58:50,553 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:50,554 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:50,554 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:50,554 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:50,555 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 16:58:50,555 - monday_sync - INFO - Metrics values: {'views': 36699, 'likes': 1965, 'comments': 0}
+2025-05-07 16:58:50,556 - monday_sync - INFO - Updating existing Monday.com item: 1947583309
+2025-05-07 16:58:50,556 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947583309', 'columnValues': '{"numbers__1": "36699", "numbers_1__1": "1965", "numbers_2__1": "0"}'}
+2025-05-07 16:58:51,393 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:51,393 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569515"}}}
+2025-05-07 16:58:51,393 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569515'}}}
+2025-05-07 16:58:51,393 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569515
+2025-05-07 16:58:51,496 - monday_sync - INFO - Starting Monday.com sync for link ID 15: https://www.youtube.com/watch?v=VtBZEh5CDec
+2025-05-07 16:58:51,496 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:51,496 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:51,506 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:51,507 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:51,507 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 16:58:51,508 - monday_sync - INFO - Metrics values: {'views': 1067788, 'likes': 34184, 'comments': 150}
+2025-05-07 16:58:51,508 - monday_sync - INFO - Updating existing Monday.com item: 1947569595
+2025-05-07 16:58:51,508 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569595', 'columnValues': '{"numbers__1": "1067788", "numbers_1__1": "34184", "numbers_2__1": "150"}'}
+2025-05-07 16:58:51,629 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:51,629 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947583309"}}}
+2025-05-07 16:58:51,629 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947583309'}}}
+2025-05-07 16:58:51,629 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947583309
+2025-05-07 16:58:52,343 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:52,343 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569595"}}}
+2025-05-07 16:58:52,343 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569595'}}}
+2025-05-07 16:58:52,343 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569595
+2025-05-07 16:58:52,443 - monday_sync - INFO - Starting Monday.com sync for link ID 17: https://www.youtube.com/watch?v=Vo6rVfsEoC4
+2025-05-07 16:58:52,443 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:52,452 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:52,452 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:52,453 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:52,453 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 16:58:52,454 - monday_sync - INFO - Metrics values: {'views': 773210, 'likes': 8240, 'comments': 140}
+2025-05-07 16:58:52,454 - monday_sync - INFO - Updating existing Monday.com item: 1947569717
+2025-05-07 16:58:52,454 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569717', 'columnValues': '{"numbers__1": "773210", "numbers_1__1": "8240", "numbers_2__1": "140"}'}
+2025-05-07 16:58:53,127 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:53,127 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569717"}}}
+2025-05-07 16:58:53,127 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569717'}}}
+2025-05-07 16:58:53,127 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569717
+2025-05-07 16:58:53,226 - monday_sync - INFO - Starting Monday.com sync for link ID 18: https://www.youtube.com/watch?v=B5Wo1zh5VIQ
+2025-05-07 16:58:53,227 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:53,228 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:53,228 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:53,228 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:53,229 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 16:58:53,229 - monday_sync - INFO - Metrics values: {'views': 36699, 'likes': 1965, 'comments': 0}
+2025-05-07 16:58:53,229 - monday_sync - INFO - Updating existing Monday.com item: 1947583309
+2025-05-07 16:58:53,230 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947583309', 'columnValues': '{"numbers__1": "36699", "numbers_1__1": "1965", "numbers_2__1": "0"}'}
+2025-05-07 16:58:54,276 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:54,276 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947583309"}}}
+2025-05-07 16:58:54,276 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947583309'}}}
+2025-05-07 16:58:54,276 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947583309
+2025-05-07 16:58:55,842 - monday_sync - INFO - Starting Monday.com sync for link ID 2: https://www.facebook.com/reel/3139447296208152
+2025-05-07 16:58:55,842 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:55,842 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:55,842 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:55,842 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:55,842 - monday_sync - INFO - Mapped platform facebook to Facebook
+2025-05-07 16:58:55,842 - monday_sync - INFO - Metrics values: {'views': 6500000, 'likes': 74702, 'comments': 885}
+2025-05-07 16:58:55,842 - monday_sync - INFO - Updating existing Monday.com item: 1947566646
+2025-05-07 16:58:55,842 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947566646', 'columnValues': '{"numbers__1": "6500000", "numbers_1__1": "74702", "numbers_2__1": "885"}'}
+2025-05-07 16:58:56,762 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:56,762 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947566646"}}}
+2025-05-07 16:58:56,775 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947566646'}}}
+2025-05-07 16:58:56,776 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947566646
+2025-05-07 16:58:57,197 - monday_sync - INFO - Starting Monday.com sync for link ID 2: https://www.facebook.com/reel/3139447296208152
+2025-05-07 16:58:57,197 - monday_sync - INFO - User ID: 1
+2025-05-07 16:58:57,198 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 16:58:57,198 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 16:58:57,198 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 16:58:57,198 - monday_sync - INFO - Mapped platform facebook to Facebook
+2025-05-07 16:58:57,198 - monday_sync - INFO - Metrics values: {'views': 6500000, 'likes': 74702, 'comments': 885}
+2025-05-07 16:58:57,198 - monday_sync - INFO - Updating existing Monday.com item: 1947566646
+2025-05-07 16:58:57,198 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947566646', 'columnValues': '{"numbers__1": "6500000", "numbers_1__1": "74702", "numbers_2__1": "885"}'}
+2025-05-07 16:58:58,037 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 16:58:58,037 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947566646"}}}
+2025-05-07 16:58:58,037 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947566646'}}}
+2025-05-07 16:58:58,037 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947566646
+2025-05-07 17:03:43,042 - monday_sync - INFO - Starting Monday.com sync for link ID 13: https://www.youtube.com/watch?v=TBS95jkRe9M
+2025-05-07 17:03:43,044 - monday_sync - INFO - User ID: 1
+2025-05-07 17:03:43,045 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:03:43,045 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:03:43,045 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:03:43,045 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 17:03:43,049 - monday_sync - INFO - Metrics values: {'views': 385251, 'likes': 5067, 'comments': 98}
+2025-05-07 17:03:43,049 - monday_sync - INFO - Updating existing Monday.com item: 1947567711
+2025-05-07 17:03:43,049 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947567711', 'columnValues': '{"numbers__1": "385251", "numbers_1__1": "5067", "numbers_2__1": "98"}'}
+2025-05-07 17:03:44,183 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:03:44,183 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947567711"}}}
+2025-05-07 17:03:44,183 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947567711'}}}
+2025-05-07 17:03:44,183 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947567711
+2025-05-07 17:05:01,823 - monday_sync - INFO - Starting Monday.com sync for link ID 14: https://www.tiktok.com/@liamdeone13/video/7499157369729879312
+2025-05-07 17:05:01,824 - monday_sync - INFO - User ID: 1
+2025-05-07 17:05:01,830 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:05:01,831 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:05:01,831 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:05:01,832 - monday_sync - INFO - Mapped platform tiktok to TikTok
+2025-05-07 17:05:01,835 - monday_sync - INFO - Metrics values: {'views': 673600, 'likes': 51400, 'comments': 1558}
+2025-05-07 17:05:01,836 - monday_sync - INFO - Updating existing Monday.com item: 1947569515
+2025-05-07 17:05:01,836 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569515', 'columnValues': '{"numbers__1": "673600", "numbers_1__1": "51400", "numbers_2__1": "1558"}'}
+2025-05-07 17:05:03,431 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:05:03,431 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569515"}}}
+2025-05-07 17:05:03,431 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569515'}}}
+2025-05-07 17:05:03,431 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569515
+2025-05-07 17:05:16,526 - monday_sync - INFO - Starting Monday.com sync for link ID 2: https://www.facebook.com/reel/3139447296208152
+2025-05-07 17:05:16,529 - monday_sync - INFO - User ID: 1
+2025-05-07 17:05:16,530 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:05:16,530 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:05:16,531 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:05:16,531 - monday_sync - INFO - Mapped platform facebook to Facebook
+2025-05-07 17:05:16,532 - monday_sync - INFO - Metrics values: {'views': 6500000, 'likes': 74748, 'comments': 885}
+2025-05-07 17:05:16,532 - monday_sync - INFO - Updating existing Monday.com item: 1947566646
+2025-05-07 17:05:16,532 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947566646', 'columnValues': '{"numbers__1": "6500000", "numbers_1__1": "74748", "numbers_2__1": "885"}'}
+2025-05-07 17:05:17,473 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:05:17,473 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947566646"}}}
+2025-05-07 17:05:17,473 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947566646'}}}
+2025-05-07 17:05:17,488 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947566646
+2025-05-07 17:41:46,658 - monday_sync - INFO - Starting Monday.com sync for link ID 13: https://www.youtube.com/watch?v=TBS95jkRe9M
+2025-05-07 17:41:46,665 - monday_sync - INFO - User ID: 1
+2025-05-07 17:41:46,668 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:41:46,668 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:41:46,669 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:41:46,669 - monday_sync - INFO - Mapped platform youtube to YouTube
+2025-05-07 17:41:46,669 - monday_sync - INFO - Metrics values: {'views': 389210, 'likes': 5129, 'comments': 99}
+2025-05-07 17:41:46,670 - monday_sync - INFO - Updating existing Monday.com item: 1947567711
+2025-05-07 17:41:46,670 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947567711', 'columnValues': '{"numbers__1": "389210", "numbers_1__1": "5129", "numbers_2__1": "99"}'}
+2025-05-07 17:41:47,966 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:41:47,966 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947567711"}}}
+2025-05-07 17:41:47,966 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947567711'}}}
+2025-05-07 17:41:47,966 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947567711
+2025-05-07 17:42:05,269 - monday_sync - INFO - Starting Monday.com sync for link ID 14: https://www.tiktok.com/@liamdeone13/video/7499157369729879312
+2025-05-07 17:42:05,269 - monday_sync - INFO - User ID: 1
+2025-05-07 17:42:05,269 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:42:05,269 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:42:05,269 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:42:05,269 - monday_sync - INFO - Mapped platform tiktok to TikTok
+2025-05-07 17:42:05,269 - monday_sync - INFO - Metrics values: {'views': 674500, 'likes': 51500, 'comments': 1559}
+2025-05-07 17:42:05,269 - monday_sync - INFO - Updating existing Monday.com item: 1947569515
+2025-05-07 17:42:05,269 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569515', 'columnValues': '{"numbers__1": "674500", "numbers_1__1": "51500", "numbers_2__1": "1559"}'}
+2025-05-07 17:42:06,209 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:42:06,209 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569515"}}}
+2025-05-07 17:42:06,209 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569515'}}}
+2025-05-07 17:42:06,209 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569515
+2025-05-07 17:42:09,438 - monday_sync - INFO - Starting Monday.com sync for link ID 2: https://www.facebook.com/reel/3139447296208152
+2025-05-07 17:42:09,438 - monday_sync - INFO - User ID: 1
+2025-05-07 17:42:09,438 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:42:09,438 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:42:09,438 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:42:09,438 - monday_sync - INFO - Mapped platform facebook to Facebook
+2025-05-07 17:42:09,438 - monday_sync - INFO - Metrics values: {'views': 6500000, 'likes': 74961, 'comments': 885}
+2025-05-07 17:42:09,438 - monday_sync - INFO - Updating existing Monday.com item: 1947566646
+2025-05-07 17:42:09,438 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947566646', 'columnValues': '{"numbers__1": "6500000", "numbers_1__1": "74961", "numbers_2__1": "885"}'}
+2025-05-07 17:42:11,879 - monday_sync - INFO - Starting Monday.com sync for link ID 14: https://www.tiktok.com/@liamdeone13/video/7499157369729879312
+2025-05-07 17:42:11,888 - monday_sync - INFO - User ID: 1
+2025-05-07 17:42:11,890 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:42:11,891 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:42:11,891 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:42:11,891 - monday_sync - INFO - Mapped platform tiktok to TikTok
+2025-05-07 17:42:11,891 - monday_sync - INFO - Metrics values: {'views': 674500, 'likes': 51500, 'comments': 1559}
+2025-05-07 17:42:11,891 - monday_sync - INFO - Updating existing Monday.com item: 1947569515
+2025-05-07 17:42:11,892 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947569515', 'columnValues': '{"numbers__1": "674500", "numbers_1__1": "51500", "numbers_2__1": "1559"}'}
+2025-05-07 17:42:12,984 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:42:12,985 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947569515"}}}
+2025-05-07 17:42:12,985 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947569515'}}}
+2025-05-07 17:42:12,985 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947569515
+2025-05-07 17:42:14,823 - monday_sync - INFO - Starting Monday.com sync for link ID 5: https://www.instagram.com/p/DJTxMx6NAUq
+2025-05-07 17:42:14,824 - monday_sync - INFO - User ID: 1
+2025-05-07 17:42:14,827 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:42:14,827 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:42:14,827 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:42:14,827 - monday_sync - INFO - Mapped platform instagram to Instagram
+2025-05-07 17:42:14,828 - monday_sync - INFO - Metrics values: {'views': 0, 'likes': 0, 'comments': 0}
+2025-05-07 17:42:14,828 - monday_sync - INFO - Creating new Monday.com item
+2025-05-07 17:42:14,828 - monday_sync - INFO - Prepared mutation with variables: {'boardId': '1934031885', 'itemName': 'https://www.instagram.com/p/DJTxMx6NAUq', 'columnValues': '{"numbers__1": "0", "numbers_1__1": "0", "numbers_2__1": "0"}'}
+2025-05-07 17:42:15,882 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:42:15,882 - monday_sync - INFO - Monday.com API response text: {"data":{"create_item":{"id":"1947842285"}}}
+2025-05-07 17:42:15,882 - monday_sync - INFO - Monday.com sync response: {'data': {'create_item': {'id': '1947842285'}}}
+2025-05-07 17:42:15,882 - monday_sync - INFO - Successfully created item in Monday.com with ID: 1947842285
+2025-05-07 17:42:20,424 - monday_sync - INFO - Starting Monday.com sync for link ID 2: https://www.facebook.com/reel/3139447296208152
+2025-05-07 17:42:20,425 - monday_sync - INFO - User ID: 1
+2025-05-07 17:42:20,426 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:42:20,426 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:42:20,426 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:42:20,427 - monday_sync - INFO - Mapped platform facebook to Facebook
+2025-05-07 17:42:20,427 - monday_sync - INFO - Metrics values: {'views': 6500000, 'likes': 74962, 'comments': 885}
+2025-05-07 17:42:20,427 - monday_sync - INFO - Updating existing Monday.com item: 1947566646
+2025-05-07 17:42:20,427 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947566646', 'columnValues': '{"numbers__1": "6500000", "numbers_1__1": "74962", "numbers_2__1": "885"}'}
+2025-05-07 17:42:21,466 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:42:21,466 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947566646"}}}
+2025-05-07 17:42:21,466 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947566646'}}}
+2025-05-07 17:42:21,466 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947566646
+2025-05-07 17:42:21,853 - monday_sync - INFO - Starting Monday.com sync for link ID 5: https://www.instagram.com/p/DJTxMx6NAUq
+2025-05-07 17:42:21,853 - monday_sync - INFO - User ID: 1
+2025-05-07 17:42:21,854 - monday_sync - INFO - Monday.com configuration found: True
+2025-05-07 17:42:21,855 - monday_sync - INFO - Using board ID: 1934031885
+2025-05-07 17:42:21,855 - monday_sync - INFO - Column IDs - Views: numbers__1, Likes: numbers_1__1, Comments: numbers_2__1
+2025-05-07 17:42:21,855 - monday_sync - INFO - Mapped platform instagram to Instagram
+2025-05-07 17:42:21,856 - monday_sync - INFO - Metrics values: {'views': 0, 'likes': 0, 'comments': 0}
+2025-05-07 17:42:21,856 - monday_sync - INFO - Updating existing Monday.com item: 1947842285
+2025-05-07 17:42:21,856 - monday_sync - INFO - Prepared mutation with variables: {'itemId': '1947842285', 'columnValues': '{"numbers__1": "0", "numbers_1__1": "0", "numbers_2__1": "0"}'}
+2025-05-07 17:42:22,777 - monday_sync - INFO - Monday.com API response status: 200
+2025-05-07 17:42:22,777 - monday_sync - INFO - Monday.com API response text: {"data":{"change_multiple_column_values":{"id":"1947842285"}}}
+2025-05-07 17:42:22,777 - monday_sync - INFO - Monday.com sync response: {'data': {'change_multiple_column_values': {'id': '1947842285'}}}
+2025-05-07 17:42:22,777 - monday_sync - INFO - Successfully updated item in Monday.com with ID: 1947842285
