@@ -1,0 +1,28 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  background: #f6f5fa;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* When sidebar is collapsed */
+.layout .sidebar.collapsed ~ .main-content {
+  margin-left: 70px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .layout .sidebar.collapsed ~ .main-content {
+    margin-left: 0;
+  }
+} 

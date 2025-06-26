@@ -1,0 +1,191 @@
+.monday-config-bg {
+  min-height: 100vh;
+  background: #f6f5fa;
+  padding: 0 0 40px 0;
+}
+
+.monday-config-header {
+  padding: 32px 32px 0 32px;
+}
+
+.monday-config-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #22223b;
+  margin-bottom: 8px;
+}
+
+.monday-config-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.monday-config-content {
+  margin: 32px 32px 0 32px;
+}
+
+.content-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px;
+}
+
+.integration-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 40px;
+  padding: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.integration-icon {
+  font-size: 3rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.integration-details h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.integration-details p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.setup-steps h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #22223b;
+  margin-bottom: 24px;
+}
+
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #22223b;
+}
+
+.step-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 32px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  margin-top: 32px;
+}
+
+.cta-section p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.connect-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.connect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .monday-config-header {
+    padding: 24px 16px 0 16px;
+  }
+  
+  .monday-config-content {
+    margin: 24px 16px 0 16px;
+  }
+  
+  .content-card {
+    padding: 24px;
+  }
+  
+  .integration-info {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .integration-icon {
+    align-self: center;
+  }
+  
+  .step-item {
+    padding: 16px;
+  }
+  
+  .cta-section {
+    padding: 24px;
+  }
+} 
