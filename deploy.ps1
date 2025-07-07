@@ -92,7 +92,7 @@ function Setup-Environment {
     }
     else {
         Write-Status "Cloning repository..."
-        git clone https://github.com/your-username/social-media-stats-dashboard.git .
+        git clone https://github.com/SNScoin/Scrapers.git .
     }
     
     # Create .env file if it doesn't exist
