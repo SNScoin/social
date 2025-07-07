@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from 'react';
+=======
+import React, { useState, useEffect } from 'react';
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Sidebar.css';
@@ -6,16 +10,22 @@ import './Sidebar.css';
 export default function Sidebar() {
   const [user, setUser] = useState(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
+<<<<<<< HEAD
   const [showUserMenu, setShowUserMenu] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
   const settingsBtnRef = useRef(null);
+=======
+  const location = useLocation();
+  const navigate = useNavigate();
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 
   useEffect(() => {
     fetchUserInfo();
   }, []);
 
+<<<<<<< HEAD
   // Click-away handler for dropdown
   useEffect(() => {
     if (!showUserMenu) return;
@@ -33,6 +43,8 @@ export default function Sidebar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [showUserMenu]);
 
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
   const fetchUserInfo = async () => {
     try {
       const token = localStorage.getItem('access_token');
@@ -46,8 +58,12 @@ export default function Sidebar() {
       const tokenData = JSON.parse(atob(token.split('.')[1]));
       setUser({
         email: tokenData.sub || 'user@example.com',
+<<<<<<< HEAD
         username: tokenData.sub?.split('@')[0] || 'User',
         display_name: tokenData.display_name || null
+=======
+        username: tokenData.sub?.split('@')[0] || 'User'
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
       });
     } catch (error) {
       console.error('Error fetching user info:', error);
@@ -98,6 +114,25 @@ export default function Sidebar() {
         )}
       </div>
 
+<<<<<<< HEAD
+=======
+      <div className="user-section">
+        {user && (
+          <div className="user-info">
+            <div className="user-avatar">
+              {user.username.charAt(0).toUpperCase()}
+            </div>
+            {!isCollapsed && (
+              <div className="user-details">
+                <div className="user-name">{user.username}</div>
+                <div className="user-email">{user.email}</div>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
       <nav className="sidebar-nav">
         <ul className="nav-menu">
           {menuItems.map((item) => (
@@ -117,6 +152,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="sidebar-footer">
+<<<<<<< HEAD
         {user && (
           <div className={`user-info-container${isCollapsed ? ' collapsed' : ''}`}> 
             <div className="user-info">
@@ -181,6 +217,13 @@ export default function Sidebar() {
               )}
             </div>
           </div>
+=======
+        {!isCollapsed && (
+          <button onClick={handleLogout} className="logout-btn">
+            <span className="logout-icon">🚪</span>
+            <span>Logout</span>
+          </button>
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
         )}
         {isCollapsed && (
           <button onClick={handleLogout} className="logout-btn collapsed" title="Logout">

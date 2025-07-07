@@ -1,7 +1,10 @@
 from .youtube_parser import YouTubeParser
 from .tiktok_parser import TikTokParser
 from .instagram_parser import InstagramParser
+<<<<<<< HEAD
 from .instagram_parser_enhanced import InstagramParserEnhanced
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 from .facebook_parser import FacebookParser
 from typing import Optional, Dict
 from .base_parser import BaseParser
@@ -18,7 +21,10 @@ class ParserFactory:
             ('youtube', YouTubeParser),
             ('tiktok', TikTokParser),
             ('instagram', InstagramParser),
+<<<<<<< HEAD
             ('instagram_enhanced', InstagramParserEnhanced),
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
             ('facebook', FacebookParser)
         ]:
             try:

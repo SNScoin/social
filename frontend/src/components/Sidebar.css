@@ -3,14 +3,23 @@
   left: 0;
   top: 0;
   height: 100vh;
+<<<<<<< HEAD
   width: 240px;
+=======
+  width: 280px;
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   justify-content: flex-start;
   transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
   z-index: 1100;
+=======
+  transition: all 0.3s ease;
+  z-index: 1000;
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -18,6 +27,7 @@
   width: 70px;
 }
 
+<<<<<<< HEAD
 /* Hide text and scale icons in collapsed state */
 .sidebar.collapsed .nav-label,
 .sidebar.collapsed .nav-description,
@@ -44,6 +54,10 @@
 
 .sidebar-header {
   padding: 20px 20px 10px 20px;
+=======
+.sidebar-header {
+  padding: 20px;
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
@@ -77,6 +91,7 @@
 }
 
 .user-section {
+<<<<<<< HEAD
   display: none;
 }
 
@@ -87,12 +102,17 @@
   gap: 12px;
   width: 100%;
   margin-bottom: 12px;
+=======
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 }
 
 .user-info {
   display: flex;
   align-items: center;
   gap: 12px;
+<<<<<<< HEAD
   flex: 1;
   min-width: 0;
 }
@@ -271,6 +291,14 @@
   width: 45px;
   height: 45px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+=======
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.2);
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -279,6 +307,7 @@
   font-size: 18px;
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.3);
+<<<<<<< HEAD
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -302,6 +331,10 @@
 }
 
 /* Enhanced User Details */
+=======
+}
+
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 .user-details {
   flex: 1;
   min-width: 0;
@@ -314,12 +347,16 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+<<<<<<< HEAD
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 }
 
 .user-email {
   font-size: 12px;
+<<<<<<< HEAD
   opacity: 0.9;
   white-space: nowrap;
   overflow: hidden;
@@ -334,6 +371,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+=======
+  opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 }
 
 .nav-menu {
@@ -371,7 +420,10 @@
   margin-right: 12px;
   min-width: 20px;
   text-align: center;
+<<<<<<< HEAD
   transition: font-size 0.3s, margin 0.3s;
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 }
 
 .nav-content {
@@ -396,6 +448,7 @@
 }
 
 .sidebar-footer {
+<<<<<<< HEAD
   margin-top: auto;
   padding: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -406,6 +459,10 @@
   gap: 12px;
   position: relative;
   z-index: 1200;
+=======
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 }
 
 .logout-btn {
@@ -441,6 +498,7 @@
   font-size: 16px;
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
   .sidebar {
     width: 70px;
@@ -454,6 +512,20 @@
   }
   .sidebar-footer {
     padding: 16px;
+=======
+/* Responsive design */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  
+  .sidebar.collapsed {
+    width: 280px;
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
   }
 }
 
@@ -473,6 +545,7 @@
 
 .sidebar-nav::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
+<<<<<<< HEAD
 }
 
 .sidebar.collapsed .icon-container {
@@ -743,4 +816,6 @@
 
 .logout-dropdown .dropdown-description {
   color: #ffb3b3;
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 } 

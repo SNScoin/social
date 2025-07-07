@@ -17,6 +17,7 @@
   color: #22223b;
 }
 
+<<<<<<< HEAD
 .company-name {
   font-size: 1.5rem;
   font-weight: 500;
@@ -24,6 +25,8 @@
   margin-left: 8px;
 }
 
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 .company-actions {
   display: flex;
   align-items: center;
@@ -132,6 +135,7 @@
   background: #e8f0fe;
 }
 
+<<<<<<< HEAD
 .platform-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -142,6 +146,8 @@
   background: #f9f9fb;
 }
 
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 .platform-icon {
   width: 36px;
   height: 36px;
@@ -155,12 +161,15 @@
   font-size: 1rem;
 }
 
+<<<<<<< HEAD
 .link-input:disabled {
   background: #f3f4f6;
   color: #9ca3af;
   cursor: not-allowed;
 }
 
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 .add-link-btn {
   background: #2563eb;
   color: #fff;
@@ -177,6 +186,7 @@
   background: #1d4ed8;
 }
 
+<<<<<<< HEAD
 .add-link-btn:disabled {
   background: #9ca3af;
   cursor: not-allowed;
@@ -187,6 +197,8 @@
   background: #9ca3af;
 }
 
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 .links-table {
   width: 100%;
   border-collapse: separate;

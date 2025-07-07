@@ -22,8 +22,11 @@ export default function CompanyStats() {
   const [platform, setPlatform] = useState(platforms[0].name);
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
+<<<<<<< HEAD
   const [processingLinks, setProcessingLinks] = useState(new Set()); // Track links being processed
   const [isAddingLink, setIsAddingLink] = useState(false); // Track if we're currently adding a link
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 
   useEffect(() => {
     console.log('Initial load with companyId:', companyId);
@@ -123,6 +126,7 @@ export default function CompanyStats() {
 
   const handleAddLink = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     
     if (isAddingLink) {
       return; // Prevent multiple submissions
@@ -135,11 +139,15 @@ export default function CompanyStats() {
       // Show loading toast
       const loadingToast = toast.loading('Parsing link and fetching data... This may take a minute or more.');
       
+=======
+    try {
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
       const response = await axios.post('http://localhost:8000/api/links/', {
         url,
         company_id: selectedCompany,
         platform
       }, {
+<<<<<<< HEAD
         headers: getAuthHeaders(),
         timeout: 300000 // 5 minutes timeout
       });
@@ -147,6 +155,11 @@ export default function CompanyStats() {
       // Dismiss loading toast
       toast.dismiss(loadingToast);
       
+=======
+        headers: getAuthHeaders()
+      });
+      
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
       // Check Monday.com sync status
       const { monday_sync_status, monday_error } = response.data;
       
@@ -163,6 +176,7 @@ export default function CompanyStats() {
       setUrl('');
       fetchLinks(selectedCompany);
       fetchStats(selectedCompany);
+<<<<<<< HEAD
       
     } catch (err) {
       // Dismiss loading toast if it exists
@@ -195,6 +209,12 @@ export default function CompanyStats() {
       console.error('Error adding link:', err);
     } finally {
       setIsAddingLink(false);
+=======
+    } catch (err) {
+      toast.error('Failed to add link');
+      setError('Failed to add link');
+      console.error('Error adding link:', err);
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
     }
   };
 
@@ -244,6 +264,7 @@ export default function CompanyStats() {
 
   return (
     <div className="company-stats-bg">
+<<<<<<< HEAD
       <div className="company-stats-container">
         <div className="company-stats-header">
           <div className="company-title">
@@ -382,6 +403,123 @@ export default function CompanyStats() {
             </tbody>
           </table>
         </div>
+=======
+      <div className="company-stats-header">
+        <div className="company-title">
+          <span className="logo-title">Social Media Stats</span>
+        </div>
+        <div className="company-actions">
+          <select value={selectedCompany} onChange={handleCompanyChange} className="company-dropdown">
+            {companies.map(c => (
+              <option key={c.id} value={c.id}>{c.name}</option>
+            ))}
+          </select>
+          <a href="/companies" className="nav-link">Companies</a>
+          <a href="/logout" className="nav-link">Logout</a>
+        </div>
+      </div>
+      {stats && (
+        <div className="stats-cards">
+          <div className="stat-card">
+            <div className="stat-label">Total Links</div>
+            <div className="stat-value">{stats.total_links}</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-label">Total Likes</div>
+            <div className="stat-value">{stats.total_likes}</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-label">Total Views</div>
+            <div className="stat-value">{stats.total_views}</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-label">Total Comments</div>
+            <div className="stat-value">{stats.total_comments}</div>
+          </div>
+        </div>
+      )}
+      <div className="add-link-card">
+        <h2>Add New Link</h2>
+        <form onSubmit={handleAddLink} className="add-link-form">
+          <div className="platform-select">
+            {platforms.map(p => (
+              <button
+                type="button"
+                key={p.name}
+                className={`platform-btn${platform === p.name ? ' selected' : ''}`}
+                onClick={() => setPlatform(p.name)}
+              >
+                <img src={p.icon} alt={p.name} className="platform-icon" />
+                <span>{p.name}</span>
+              </button>
+            ))}
+          </div>
+          <input
+            type="text"
+            className="link-input"
+            placeholder="Enter a YouTube, TikTok, or Instagram link"
+            value={url}
+            onChange={e => setUrl(e.target.value)}
+            required
+          />
+          <button type="submit" className="add-link-btn">Add Link</button>
+        </form>
+      </div>
+      <div className="all-links-card">
+        <h2>All Links</h2>
+        <table className="links-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Title</th>
+              <th>URL</th>
+              <th>Views</th>
+              <th>Likes</th>
+              <th>Comments</th>
+              <th>Monday.com</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {links.map(link => (
+              <tr key={link.id}>
+                <td>{link.platform}</td>
+                <td>{link.title && link.title.trim() !== ""
+                  ? (link.title.length > 40 ? link.title.slice(0, 40) + '...' : link.title)
+                  : <a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a>
+                }</td>
+                <td><a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a></td>
+                <td>{link.metrics?.views ?? 0}</td>
+                <td>{link.metrics?.likes ?? 0}</td>
+                <td>{link.metrics?.comments ?? 0}</td>
+                <td>
+                  {link.monday_item_id ? (
+                    <span title="Synced to Monday.com" style={{color: '#10b981', fontWeight: 'bold', fontSize: '1.2em'}}>✅</span>
+                  ) : (
+                    <span title="Not synced to Monday.com" style={{color: '#e11d48', fontWeight: 'bold', fontSize: '1.2em'}}>❌</span>
+                  )}
+                </td>
+                <td>
+                  <button
+                    onClick={() => handleDeleteLink(link.id)}
+                    className="icon-btn delete"
+                    title="Delete Link"
+                  >
+                    <FaTrash />
+                  </button>
+                  <button
+                    onClick={() => handleRefreshStats(link.id)}
+                    className="icon-btn"
+                    title="Refresh Stats"
+                  >
+                    <FaSyncAlt />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
       </div>
       {error && <div className="error">{error}</div>}
     </div>

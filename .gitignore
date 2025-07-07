@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Environment variables and secrets
 .env
 .env.local
@@ -174,3 +175,7 @@ dmypy.json
 *.rej
 *.orig.*
 *.rej.* 
+=======
+.env 
+env_template.txt 
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460

@@ -26,7 +26,10 @@ from googleapiclient.errors import HttpError
 import logging
 from logging.handlers import RotatingFileHandler
 from backend.app.routers.stats import router as stats_router
+<<<<<<< HEAD
 from backend.app.routers.user_settings import router as user_settings_router
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 from backend.app.utils.monday_sync import sync_link_to_monday
 from backend.app.core.auth import (
     SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES,
@@ -38,7 +41,10 @@ from sqlalchemy.sql import select
 from sqlalchemy.orm import joinedload
 from pydantic import ConfigDict
 from backend.app.models.models import SocialLink, Platform, User, Company, Link, LinkMetrics, MondayConnection
+<<<<<<< HEAD
 from sqlalchemy.sql import text
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 
 # Load environment variables
 load_dotenv()
@@ -90,9 +96,12 @@ templates = Jinja2Templates(directory="../../templates")
 # Mount Monday.com routes
 app.include_router(stats_router)
 
+<<<<<<< HEAD
 # Mount user settings routes
 app.include_router(user_settings_router)
 
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 # Pydantic models for request/response
 class Token(BaseModel):
     access_token: str
@@ -186,36 +195,59 @@ class LinkSubmission(BaseModel):
 
 def validate_social_url(url: str) -> tuple[str, str]:
     """Validate and extract platform from social media URL."""
+<<<<<<< HEAD
     logger.info(f"Validating social URL: '{url}'")
     if not url:
         raise ValueError("URL cannot be empty")
     url = url.strip()
     logger.info(f"Stripped URL: '{url}'")
+=======
+    if not url:
+        raise ValueError("URL cannot be empty")
+        
+    url = url.strip()
+    
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
     # YouTube URL patterns
     youtube_patterns = [
         r'(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=[\w-]+',
         r'(?:https?:\/\/)?(?:www\.)?youtube\.com\/shorts\/[\w-]+',
         r'(?:https?:\/\/)?youtu\.be\/[\w-]+'
     ]
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
     # TikTok URL patterns
     tiktok_patterns = [
         r'(?:https?:\/\/)?(?:www\.)?tiktok\.com\/@[\w.-]+\/video\/\d+',
         r'(?:https?:\/\/)?(?:www\.)?tiktok\.com\/t\/[\w-]+',
         r'(?:https?:\/\/)?vm\.tiktok\.com\/[\w-]+'
     ]
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
     # Instagram URL patterns
     instagram_patterns = [
         r'(?:https?:\/\/)?(?:www\.)?instagram\.com\/(?:p|reel)\/[\w-]+(?:\/.*)?(?:\?.*)?$',
         r'(?:https?:\/\/)?(?:www\.)?instagram\.com\/reels\/[\w-]+(?:\/.*)?(?:\?.*)?$',
         r'(?:https?:\/\/)?(?:www\.)?instagram\.com\/(?:stories|tv)\/[\w-]+(?:\/.*)?(?:\?.*)?$'
     ]
+<<<<<<< HEAD
     # Facebook URL patterns
     facebook_patterns = [
         r'(?:https?:\/\/)?(?:www\.)?facebook\.com\/reel\/\d+',
+=======
+    
+    # Facebook URL patterns
+    facebook_patterns = [
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
         r'(?:https?:\/\/)?(?:www\.)?facebook\.com\/[\w.-]+\/videos\/\d+',
         r'(?:https?:\/\/)?(?:www\.)?facebook\.com\/watch\/\?v=\d+',
         r'(?:https?:\/\/)?(?:www\.)?fb\.watch\/[\w-]+'
     ]
+<<<<<<< HEAD
     # Check each platform's patterns
     for pattern in youtube_patterns:
         if re.match(pattern, url):
@@ -234,6 +266,26 @@ def validate_social_url(url: str) -> tuple[str, str]:
             logger.info(f"Matched Facebook pattern: {pattern}")
             return url, "facebook"
     logger.error(f"No pattern matched for URL: '{url}'")
+=======
+    
+    # Check each platform's patterns
+    for pattern in youtube_patterns:
+        if re.match(pattern, url):
+            return url, "youtube"
+            
+    for pattern in tiktok_patterns:
+        if re.match(pattern, url):
+            return url, "tiktok"
+            
+    for pattern in instagram_patterns:
+        if re.match(pattern, url):
+            return url, "instagram"
+            
+    for pattern in facebook_patterns:
+        if re.match(pattern, url):
+            return url, "facebook"
+    
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
     raise ValueError("Invalid social media URL. Please provide a valid YouTube, TikTok, Instagram, or Facebook URL.")
 
 def determine_platform(url: str) -> str:
@@ -380,7 +432,11 @@ async def add_link(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
+<<<<<<< HEAD
     """Add a new social media link with parsing first."""
+=======
+    """Add a new social media link."""
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
     try:
         # Log the raw request body
         logger.info(f"Received link submission: {link.dict()}")
@@ -402,6 +458,7 @@ async def add_link(
             logger.error(f"User {current_user.id} not authorized for company {link.company_id}")
             raise HTTPException(status_code=403, detail="Not authorized to add links to this company")
         
+<<<<<<< HEAD
         # Parse the link FIRST and wait for response
         parsed_title = None
         parsed_metrics = None
@@ -450,25 +507,41 @@ async def add_link(
             logger.info(f"Using fallback title after error: {parsed_title}")
         
         # NOW create the link in database after parsing is complete
+=======
+        # Create new link
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
         try:
             new_link = Link(
                 url=url,
                 platform=platform.lower(),  # Ensure platform is lowercase
                 user_id=current_user.id,
+<<<<<<< HEAD
                 company_id=link.company_id,
                 title=parsed_title
+=======
+                company_id=link.company_id
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
             )
             db.add(new_link)
             db.commit()
             db.refresh(new_link)
             logger.info(f"Created new link with ID: {new_link.id}")
             
+<<<<<<< HEAD
             # Create metrics with the parsed data
             metrics = LinkMetrics(
                 link_id=new_link.id,
                 views=parsed_metrics['views'],
                 likes=parsed_metrics['likes'],
                 comments=parsed_metrics['comments']
+=======
+            # Create initial metrics
+            metrics = LinkMetrics(
+                link_id=new_link.id,
+                views=0,
+                likes=0,
+                comments=0
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
             )
             db.add(metrics)
             db.commit()
@@ -479,6 +552,17 @@ async def add_link(
             db.rollback()
             raise HTTPException(status_code=500, detail=f"Failed to create link in database: {str(e)}")
         
+<<<<<<< HEAD
+=======
+        # Process the link asynchronously
+        try:
+            asyncio.create_task(process_single_link(new_link, db))
+            logger.info(f"Started async processing for link: {new_link.id}")
+        except Exception as e:
+            logger.error(f"Error starting async processing: {str(e)}\n{traceback.format_exc()}")
+            # Don't raise here, as the link was created successfully
+        
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
         # Sync to Monday.com
         monday_sync_status = 'not_configured'
         monday_error = None
@@ -1737,6 +1821,7 @@ async def get_company_stats(company_id: int, db: Session = Depends(get_db), curr
             }
         }
         
+<<<<<<< HEAD
         # Platform mapping for case-insensitive matching
         platform_mapping = {
             "youtube": "YouTube",
@@ -1745,12 +1830,15 @@ async def get_company_stats(company_id: int, db: Session = Depends(get_db), curr
             "facebook": "Facebook"
         }
         
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
         # Fetch all metrics for these links in one query
         metrics_list = db.query(LinkMetrics).filter(LinkMetrics.link_id.in_(link_ids)).all() if link_ids else []
         link_id_to_platform = {link.id: link.platform for link in links}
         
         for metrics in metrics_list:
             platform = link_id_to_platform.get(metrics.link_id)
+<<<<<<< HEAD
             # Map platform to correct case
             platform_normalized = platform_mapping.get(platform.lower()) if platform else None
             if platform_normalized in stats["platform_stats"]:
@@ -1758,6 +1846,13 @@ async def get_company_stats(company_id: int, db: Session = Depends(get_db), curr
                 stats["platform_stats"][platform_normalized]["views"] += metrics.views or 0
                 stats["platform_stats"][platform_normalized]["likes"] += metrics.likes or 0
                 stats["platform_stats"][platform_normalized]["comments"] += metrics.comments or 0
+=======
+            if platform in stats["platform_stats"]:
+                stats["platform_stats"][platform]["count"] += 1
+                stats["platform_stats"][platform]["views"] += metrics.views or 0
+                stats["platform_stats"][platform]["likes"] += metrics.likes or 0
+                stats["platform_stats"][platform]["comments"] += metrics.comments or 0
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
                 stats["total_views"] += metrics.views or 0
                 stats["total_likes"] += metrics.likes or 0
                 stats["total_comments"] += metrics.comments or 0
@@ -1796,6 +1891,7 @@ async def register_user(user: UserCreate, db: Session = Depends(get_db)):
         return UserBase.from_orm(db_user)
     except Exception as e:
         logger.error(f"Error registering user: {str(e)}\n{traceback.format_exc()}")
+<<<<<<< HEAD
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @app.get("/health")
@@ -1823,3 +1919,6 @@ async def health_check():
                 "error": str(e)
             }
         ) 
+=======
+        raise HTTPException(status_code=500, detail="Internal server error") 
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460

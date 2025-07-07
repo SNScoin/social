@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Social Stats
 
 A modern web application for tracking and analyzing social media performance across multiple platforms including YouTube, TikTok, Instagram, and Facebook.
@@ -56,6 +57,8 @@ The application uses modern web technologies and supports:
 
 The favicon is provided in both SVG and ICO formats for maximum compatibility.
 
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "short_name": "Social Stats",
   "name": "Social Media Stats Dashboard",
   "icons": [
@@ -8,6 +9,12 @@
       "sizes": "any"
     },
     {
+=======
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"

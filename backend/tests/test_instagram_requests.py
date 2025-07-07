@@ -52,7 +52,11 @@ def extract_metadata_from_html(html_content):
 def test_instagram_scraping():
     url = "https://scrapeninja.p.rapidapi.com/scrape"
     
+<<<<<<< HEAD
     querystring = {"url": "https://www.instagram.com/reel/DLZEet2I6No/?utm_source=ig_web_copy_link"}
+=======
+    querystring = {"url": "https://www.instagram.com/reels/DIEj1QZN22_/"}
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
     
     headers = {
         "x-rapidapi-key": "686292c56amsh1c864cb048af666p1c8f45jsna2dbcc01f184",
@@ -61,7 +65,10 @@ def test_instagram_scraping():
     
     try:
         print("Making request to ScrapeNinja API...")
+<<<<<<< HEAD
         print(f"Target URL: {querystring['url']}")
+=======
+>>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
         response = requests.get(url, headers=headers, params=querystring)
         
         print(f"\nResponse Status Code: {response.status_code}")
