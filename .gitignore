@@ -66,6 +66,14 @@ yarn-debug.log*
 yarn-error.log*
 .npm
 .yarn-integrity
+.pnp
+.pnp.js
+
+# Frontend build artifacts
+frontend/build/
+frontend/dist/
+frontend/.cache/
+frontend/node_modules/
 
 # Frontend build artifacts
 frontend/build/
