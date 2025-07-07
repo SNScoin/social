@@ -10,8 +10,9 @@ async def test_instagram_parser():
         parser = InstagramParser()
         print("Parser initialized successfully")
         
-        # Test URLs - let's try both a reel and a post
+        # Test URLs - updated with the provided URL
         test_urls = [
+            "https://www.instagram.com/reel/DLZEet2I6No/?utm_source=ig_web_copy_link",
             "https://www.instagram.com/reels/DIEj1QZN22_/",
             "https://www.instagram.com/reel/DHVPQMjSD08/"
         ]

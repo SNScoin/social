@@ -22,6 +22,8 @@ export default function CompanyStats() {
   const [platform, setPlatform] = useState(platforms[0].name);
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
+  const [processingLinks, setProcessingLinks] = useState(new Set()); // Track links being processed
+  const [isAddingLink, setIsAddingLink] = useState(false); // Track if we're currently adding a link
 
   useEffect(() => {
     console.log('Initial load with companyId:', companyId);
@@ -121,14 +123,29 @@ export default function CompanyStats() {
 
   const handleAddLink = async (e) => {
     e.preventDefault();
+    
+    if (isAddingLink) {
+      return; // Prevent multiple submissions
+    }
+    
+    setIsAddingLink(true);
+    setError('');
+    
     try {
+      // Show loading toast
+      const loadingToast = toast.loading('Parsing link and fetching data... This may take a minute or more.');
+      
       const response = await axios.post('http://localhost:8000/api/links/', {
         url,
         company_id: selectedCompany,
         platform
       }, {
-        headers: getAuthHeaders()
+        headers: getAuthHeaders(),
+        timeout: 300000 // 5 minutes timeout
       });
+      
+      // Dismiss loading toast
+      toast.dismiss(loadingToast);
       
       // Check Monday.com sync status
       const { monday_sync_status, monday_error } = response.data;
@@ -146,10 +163,38 @@ export default function CompanyStats() {
       setUrl('');
       fetchLinks(selectedCompany);
       fetchStats(selectedCompany);
+      
     } catch (err) {
-      toast.error('Failed to add link');
-      setError('Failed to add link');
+      // Dismiss loading toast if it exists
+      toast.dismiss();
+      
+      let errorMessage = 'Failed to add link';
+      
+      if (err.code === 'ECONNABORTED') {
+        errorMessage = 'Request timed out. The link parsing took too long. Please try again.';
+      } else if (err.response) {
+        // Server responded with error status
+        if (err.response.status === 400) {
+          errorMessage = err.response.data.detail || 'Invalid link format';
+        } else if (err.response.status === 404) {
+          errorMessage = 'Company not found';
+        } else if (err.response.status === 403) {
+          errorMessage = 'Not authorized to add links to this company';
+        } else if (err.response.status === 500) {
+          errorMessage = 'Server error occurred while processing the link';
+        } else {
+          errorMessage = err.response.data.detail || 'Failed to add link';
+        }
+      } else if (err.request) {
+        // Network error
+        errorMessage = 'Network error. Please check your connection and try again.';
+      }
+      
+      toast.error(errorMessage);
+      setError(errorMessage);
       console.error('Error adding link:', err);
+    } finally {
+      setIsAddingLink(false);
     }
   };
 
@@ -199,121 +244,144 @@ export default function CompanyStats() {
 
   return (
     <div className="company-stats-bg">
-      <div className="company-stats-header">
-        <div className="company-title">
-          <span className="logo-title">Social Media Stats</span>
-        </div>
-        <div className="company-actions">
-          <select value={selectedCompany} onChange={handleCompanyChange} className="company-dropdown">
-            {companies.map(c => (
-              <option key={c.id} value={c.id}>{c.name}</option>
-            ))}
-          </select>
-          <a href="/companies" className="nav-link">Companies</a>
-          <a href="/logout" className="nav-link">Logout</a>
-        </div>
-      </div>
-      {stats && (
-        <div className="stats-cards">
-          <div className="stat-card">
-            <div className="stat-label">Total Links</div>
-            <div className="stat-value">{stats.total_links}</div>
+      <div className="company-stats-container">
+        <div className="company-stats-header">
+          <div className="company-title">
+            <span className="logo-title">
+              Social Stats
+              {selectedCompany && companies.length > 0 && (
+                <span className="company-name">
+                  {' - '}
+                  {companies.find(c => c.id == selectedCompany)?.name || 'Unknown Company'}
+                </span>
+              )}
+            </span>
           </div>
-          <div className="stat-card">
-            <div className="stat-label">Total Likes</div>
-            <div className="stat-value">{stats.total_likes}</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-label">Total Views</div>
-            <div className="stat-value">{stats.total_views}</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-label">Total Comments</div>
-            <div className="stat-value">{stats.total_comments}</div>
+          <div className="company-actions">
+            <select value={selectedCompany} onChange={handleCompanyChange} className="company-dropdown">
+              {companies.map(c => (
+                <option key={c.id} value={c.id}>{c.name}</option>
+              ))}
+            </select>
+            <a href="/companies" className="nav-link">Companies</a>
+            <a href="/logout" className="nav-link">Logout</a>
           </div>
         </div>
-      )}
-      <div className="add-link-card">
-        <h2>Add New Link</h2>
-        <form onSubmit={handleAddLink} className="add-link-form">
-          <div className="platform-select">
-            {platforms.map(p => (
-              <button
-                type="button"
-                key={p.name}
-                className={`platform-btn${platform === p.name ? ' selected' : ''}`}
-                onClick={() => setPlatform(p.name)}
-              >
-                <img src={p.icon} alt={p.name} className="platform-icon" />
-                <span>{p.name}</span>
-              </button>
-            ))}
+        {stats && (
+          <div className="stats-cards">
+            <div className="stat-card">
+              <div className="stat-label">Total Links</div>
+              <div className="stat-value">{stats.total_links}</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Total Likes</div>
+              <div className="stat-value">{stats.total_likes}</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Total Views</div>
+              <div className="stat-value">{stats.total_views}</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Total Comments</div>
+              <div className="stat-value">{stats.total_comments}</div>
+            </div>
           </div>
-          <input
-            type="text"
-            className="link-input"
-            placeholder="Enter a YouTube, TikTok, or Instagram link"
-            value={url}
-            onChange={e => setUrl(e.target.value)}
-            required
-          />
-          <button type="submit" className="add-link-btn">Add Link</button>
-        </form>
-      </div>
-      <div className="all-links-card">
-        <h2>All Links</h2>
-        <table className="links-table">
-          <thead>
-            <tr>
-              <th>Platform</th>
-              <th>Title</th>
-              <th>URL</th>
-              <th>Views</th>
-              <th>Likes</th>
-              <th>Comments</th>
-              <th>Monday.com</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {links.map(link => (
-              <tr key={link.id}>
-                <td>{link.platform}</td>
-                <td>{link.title && link.title.trim() !== ""
-                  ? (link.title.length > 40 ? link.title.slice(0, 40) + '...' : link.title)
-                  : <a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a>
-                }</td>
-                <td><a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a></td>
-                <td>{link.metrics?.views ?? 0}</td>
-                <td>{link.metrics?.likes ?? 0}</td>
-                <td>{link.metrics?.comments ?? 0}</td>
-                <td>
-                  {link.monday_item_id ? (
-                    <span title="Synced to Monday.com" style={{color: '#10b981', fontWeight: 'bold', fontSize: '1.2em'}}>✅</span>
-                  ) : (
-                    <span title="Not synced to Monday.com" style={{color: '#e11d48', fontWeight: 'bold', fontSize: '1.2em'}}>❌</span>
-                  )}
-                </td>
-                <td>
-                  <button
-                    onClick={() => handleDeleteLink(link.id)}
-                    className="icon-btn delete"
-                    title="Delete Link"
-                  >
-                    <FaTrash />
-                  </button>
-                  <button
-                    onClick={() => handleRefreshStats(link.id)}
-                    className="icon-btn"
-                    title="Refresh Stats"
-                  >
-                    <FaSyncAlt />
-                  </button>
-                </td>
+        )}
+        <div className="add-link-card">
+          <h2>Add New Link</h2>
+          <form onSubmit={handleAddLink} className="add-link-form">
+            <div className="platform-select">
+              {platforms.map(p => (
+                <button
+                  type="button"
+                  key={p.name}
+                  className={`platform-btn${platform === p.name ? ' selected' : ''}`}
+                  onClick={() => setPlatform(p.name)}
+                  disabled={isAddingLink}
+                >
+                  <img src={p.icon} alt={p.name} className="platform-icon" />
+                  <span>{p.name}</span>
+                </button>
+              ))}
+            </div>
+            <input
+              type="text"
+              className="link-input"
+              placeholder="Enter a YouTube, TikTok, or Instagram link"
+              value={url}
+              onChange={e => setUrl(e.target.value)}
+              required
+              disabled={isAddingLink}
+            />
+            <button type="submit" className="add-link-btn" disabled={isAddingLink}>
+              {isAddingLink ? 'Parsing Link...' : 'Add Link'}
+            </button>
+          </form>
+        </div>
+        <div className="all-links-card">
+          <h2>All Links</h2>
+          <table className="links-table">
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Title</th>
+                <th>URL</th>
+                <th>Views</th>
+                <th>Likes</th>
+                <th>Comments</th>
+                <th>Monday.com</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {links.map(link => (
+                <tr key={link.id}>
+                  <td>
+                    {(() => {
+                      const p = platforms.find(x => x.name.toLowerCase() === link.platform.toLowerCase());
+                      return p ? <img src={p.icon} alt={link.platform} className="platform-icon" style={{width: 24, height: 24}} /> : link.platform;
+                    })()}
+                  </td>
+                  <td>{link.title && link.title.trim() !== ""
+                    ? (link.title.length > 40 ? link.title.slice(0, 40) + '...' : link.title)
+                    : <a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a>
+                  }</td>
+                  <td>
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                      {link.url.length > 24 ? link.url.slice(0, 20) + '...' : link.url}
+                    </a>
+                  </td>
+                  <td>{link.metrics?.views ?? 0}</td>
+                  <td>{link.metrics?.likes ?? 0}</td>
+                  <td>{link.metrics?.comments ?? 0}</td>
+                  <td>
+                    {link.monday_item_id ? (
+                      <span title="Synced to Monday.com" style={{color: '#10b981', fontWeight: 'bold', fontSize: '1.2em'}}>✅</span>
+                    ) : (
+                      <span title="Not synced to Monday.com" style={{color: '#e11d48', fontWeight: 'bold', fontSize: '1.2em'}}>❌</span>
+                    )}
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => handleDeleteLink(link.id)}
+                      className="icon-btn delete"
+                      title="Delete Link"
+                    >
+                      <FaTrash />
+                    </button>
+                    <button
+                      onClick={() => handleRefreshStats(link.id)}
+                      className="icon-btn"
+                      title="Refresh Stats"
+                    >
+                      <FaSyncAlt />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       {error && <div className="error">{error}</div>}
     </div>

@@ -34,6 +34,17 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     is_active = Column(Boolean, default=True)
+    
+    # Profile Information
+    display_name = Column(String, nullable=True)
+    profile_picture = Column(String, nullable=True)  # URL to profile picture
+    bio = Column(Text, nullable=True)
+    timezone = Column(String, default="UTC")
+    
+    # Account Security
+    email_verified = Column(Boolean, default=False)
+    last_login = Column(DateTime(timezone=True), nullable=True)
+    
     companies = relationship("Company", back_populates="owner")
     links = relationship("Link", back_populates="user")
     monday_connections = relationship("MondayConnection", back_populates="user")

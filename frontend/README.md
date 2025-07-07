@@ -1,3 +1,61 @@
+# Social Stats
+
+A modern web application for tracking and analyzing social media performance across multiple platforms including YouTube, TikTok, Instagram, and Facebook.
+
+## Features
+
+- **Multi-Platform Support**: Track metrics from YouTube, TikTok, Instagram, and Facebook
+- **Company Management**: Organize your social media links by company
+- **Real-time Metrics**: View views, likes, and comments for each link
+- **Monday.com Integration**: Sync your data to Monday.com boards
+- **Detailed Reports**: Generate performance reports and insights
+- **Modern UI**: Clean, responsive design with real-time updates
+
+## Recent Updates
+
+### Favicon and Branding
+- Updated application name to "Social Stats"
+- Created a modern SVG favicon with analytics design
+- Updated browser title and manifest information
+- Improved app description and metadata
+
+### Bug Fixes
+- Fixed platform case sensitivity issue in API endpoints
+- Resolved total likes, views, and comments showing as zero
+- Improved platform matching for accurate statistics
+
+## Getting Started
+
+1. Start the backend server:
+   ```bash
+   python run_server.py
+   ```
+
+2. Start the frontend development server:
+   ```bash
+   cd frontend
+   npm start
+   ```
+
+3. Open your browser and navigate to `http://localhost:3000`
+
+## Technologies Used
+
+- **Frontend**: React, React Router, Axios, React Toastify
+- **Backend**: FastAPI, SQLAlchemy, PostgreSQL
+- **Styling**: CSS3 with modern design patterns
+- **Icons**: Custom SVG favicon with gradient design
+
+## Browser Support
+
+The application uses modern web technologies and supports:
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+
+The favicon is provided in both SVG and ICO formats for maximum compatibility.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

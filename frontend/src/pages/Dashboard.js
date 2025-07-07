@@ -36,10 +36,12 @@ export default function Dashboard() {
   if (loading) {
     return (
       <div className="dashboard-bg">
-        <div className="dashboard-header">
-          <h1>Dashboard</h1>
+        <div className="dashboard-container">
+          <div className="dashboard-header">
+            <h1>Dashboard</h1>
+          </div>
+          <div className="loading">Loading...</div>
         </div>
-        <div className="loading">Loading...</div>
       </div>
     );
   }
@@ -47,65 +49,69 @@ export default function Dashboard() {
   if (error) {
     return (
       <div className="dashboard-bg">
-        <div className="dashboard-header">
-          <h1>Dashboard</h1>
+        <div className="dashboard-container">
+          <div className="dashboard-header">
+            <h1>Dashboard</h1>
+          </div>
+          <div className="error-message">{error}</div>
         </div>
-        <div className="error-message">{error}</div>
       </div>
     );
   }
 
   return (
     <div className="dashboard-bg">
-      <div className="dashboard-header">
-        <h1>Dashboard</h1>
-        <p>Overview of your social media performance</p>
-      </div>
-      
-      <div className="dashboard-stats">
-        <div className="stat-card">
-          <div className="stat-icon">📊</div>
-          <div className="stat-content">
-            <h3>Total Links</h3>
-            <div className="stat-value">{stats?.total_links || 0}</div>
-          </div>
+      <div className="dashboard-container">
+        <div className="dashboard-header">
+          <h1>Dashboard</h1>
+          <p>Overview of your social media performance</p>
         </div>
         
-        <div className="stat-card">
-          <div className="stat-icon">👁️</div>
-          <div className="stat-content">
-            <h3>Total Views</h3>
-            <div className="stat-value">{stats?.total_views || 0}</div>
+        <div className="dashboard-stats">
+          <div className="stat-card">
+            <div className="stat-icon">📊</div>
+            <div className="stat-content">
+              <h3>Total Links</h3>
+              <div className="stat-value">{stats?.total_links || 0}</div>
+            </div>
           </div>
-        </div>
-        
-        <div className="stat-card">
-          <div className="stat-icon">👍</div>
-          <div className="stat-content">
-            <h3>Total Likes</h3>
-            <div className="stat-value">{stats?.total_likes || 0}</div>
-          </div>
-        </div>
-        
-        <div className="stat-card">
-          <div className="stat-icon">💬</div>
-          <div className="stat-content">
-            <h3>Total Comments</h3>
-            <div className="stat-value">{stats?.total_comments || 0}</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="dashboard-content">
-        <div className="content-card">
-          <h2>Welcome to Social Stats Dashboard</h2>
-          <p>This is your central hub for managing and monitoring your social media performance across different platforms.</p>
           
-          <div className="quick-actions">
-            <h3>Quick Actions</h3>
-            <div className="action-buttons">
-              <a href="/companies" className="action-btn">Manage Companies</a>
-              <a href="/reports" className="action-btn">View Reports</a>
+          <div className="stat-card">
+            <div className="stat-icon">👁️</div>
+            <div className="stat-content">
+              <h3>Total Views</h3>
+              <div className="stat-value">{stats?.total_views || 0}</div>
+            </div>
+          </div>
+          
+          <div className="stat-card">
+            <div className="stat-icon">👍</div>
+            <div className="stat-content">
+              <h3>Total Likes</h3>
+              <div className="stat-value">{stats?.total_likes || 0}</div>
+            </div>
+          </div>
+          
+          <div className="stat-card">
+            <div className="stat-icon">💬</div>
+            <div className="stat-content">
+              <h3>Total Comments</h3>
+              <div className="stat-value">{stats?.total_comments || 0}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="dashboard-content">
+          <div className="content-card">
+            <h2>Welcome to Social Stats Dashboard</h2>
+            <p>This is your central hub for managing and monitoring your social media performance across different platforms.</p>
+            
+            <div className="quick-actions">
+              <h3>Quick Actions</h3>
+              <div className="action-buttons">
+                <a href="/companies" className="action-btn">Manage Companies</a>
+                <a href="/reports" className="action-btn">View Reports</a>
+              </div>
             </div>
           </div>
         </div>
