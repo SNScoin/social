@@ -1,0 +1,9 @@
+{
+    "name": "social-common",
+    "version": "1.0.0",
+    "description": "Shared constants, validators, and error codes",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"No tests yet\""
+    }
+}

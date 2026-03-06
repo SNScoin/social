@@ -1,131 +1,36 @@
-<<<<<<< HEAD
-# Social Stats
-
-A modern web application for tracking and analyzing social media performance across multiple platforms including YouTube, TikTok, Instagram, and Facebook.
-
-## Features
-
-- **Multi-Platform Support**: Track metrics from YouTube, TikTok, Instagram, and Facebook
-- **Company Management**: Organize your social media links by company
-- **Real-time Metrics**: View views, likes, and comments for each link
-- **Monday.com Integration**: Sync your data to Monday.com boards
-- **Detailed Reports**: Generate performance reports and insights
-- **Modern UI**: Clean, responsive design with real-time updates
-
-## Recent Updates
-
-### Favicon and Branding
-- Updated application name to "Social Stats"
-- Created a modern SVG favicon with analytics design
-- Updated browser title and manifest information
-- Improved app description and metadata
-
-### Bug Fixes
-- Fixed platform case sensitivity issue in API endpoints
-- Resolved total likes, views, and comments showing as zero
-- Improved platform matching for accurate statistics
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-1. Start the backend server:
-   ```bash
-   python run_server.py
-   ```
+First, run the development server:
 
-2. Start the frontend development server:
-   ```bash
-   cd frontend
-   npm start
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-3. Open your browser and navigate to `http://localhost:3000`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Technologies Used
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-- **Frontend**: React, React Router, Axios, React Toastify
-- **Backend**: FastAPI, SQLAlchemy, PostgreSQL
-- **Styling**: CSS3 with modern design patterns
-- **Icons**: Custom SVG favicon with gradient design
-
-## Browser Support
-
-The application uses modern web technologies and supports:
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-
-The favicon is provided in both SVG and ICO formats for maximum compatibility.
-
-=======
->>>>>>> 3f7391616262f0d9bb63bdfee4943e8983f27460
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To learn more about Next.js, take a look at the following resources:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Code Splitting
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Deploy on Vercel
 
-### Analyzing the Bundle Size
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
